@@ -50,11 +50,12 @@ RSpec.describe 'flights index page' do
     visit "/flights"
 
     expect(page).to have_content("Larry")
+    # within("#{flight1.id}") do
+      click_link("delete") #does not click the first delete button seen...
 
-    click_link("delete") #does not click the first delete button seen...
-
-    expect(current_path).to eq('/flights')
-    expect(page).to have_content("Mary")
-    expect(page).not_to have_content("Larry")
+      expect(current_path).to eq('/flights')
+      expect(page).to have_content("Mary")
+      expect(page).not_to have_content("Larry")
+    # end
   end
 end
