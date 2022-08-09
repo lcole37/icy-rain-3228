@@ -51,7 +51,7 @@ RSpec.describe 'flights index page' do
 
     expect(page).to have_content("Larry")
 
-    click_link("delete") #does this click the first delete button seen?
+    click_link("delete") #does not click the first delete button seen...
 
     expect(current_path).to eq('/flights')
     expect(page).to have_content("Mary")
