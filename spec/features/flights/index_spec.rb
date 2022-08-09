@@ -38,4 +38,24 @@ RSpec.describe 'flights index page' do
     expect(page).to have_content("Gary")
     expect(page).not_to have_content("Bob")
   end
+
+  it 'should have a link to remove passenger from the flight' do
+    visit "/flights"
+
+    expect(page).to have_content("Larry")
+    expect(page).to have_link("delete")
+  end
+
+  it 'link should return to flights index page, with passenger deleted.' do
+    visit "/flights"
+
+    expect(page).to have_content("Larry")
+
+    click_link("delete") #does this click the first delete button seen?
+
+    expect(page).to have_content("Flights Index Page")
+    expect(page).to have_content("Mary")
+    expect(page).to have_content("United")
+    expect(page).not_to have_content("Larry")
+  end
 end
