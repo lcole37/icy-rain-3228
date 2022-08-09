@@ -53,9 +53,8 @@ RSpec.describe 'flights index page' do
 
     click_link("delete") #does this click the first delete button seen?
 
-    expect(page).to have_content("Flights Index Page")
+    expect(current_path).to eq('/flights')
     expect(page).to have_content("Mary")
-    expect(page).to have_content("United")
     expect(page).not_to have_content("Larry")
   end
 end
