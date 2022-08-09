@@ -9,10 +9,10 @@ RSpec.describe 'flights index page' do
   flight2 = southwest.flights.create!(number: "17", date: "January 6", departure_city: "Dublin", arrival_city: "Minneapolis")
   flight3 = delta.flights.create!(number: "37", date: "May 9", departure_city: "Atlanta", arrival_city: "Lincoln")
 
-  larry = Passengers.create!(name: "Larry", age: 20)
-  mary = Passengers.create!(name: "Mary", age: 30)
-  gary = Passengers.create!(name: "Gary", age: 40)
-  sherri = Passengers.create!(name: "Sherri", age: 50)
+  larry = Passenger.create!(name: "Larry", age: 20)
+  mary = Passenger.create!(name: "Mary", age: 30)
+  gary = Passenger.create!(name: "Gary", age: 40)
+  sherri = Passenger.create!(name: "Sherri", age: 50)
 
   PassengerFlight.create!(passenger_id: 1, flight_id: 1)
   PassengerFlight.create!(passenger_id: 2, flight_id: 1)
